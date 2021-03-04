@@ -30,8 +30,8 @@ def slow1(M):  ## By Twitter : @Matrix0700
         n.stdout.write(c)
         n.stdout.flush()
 parser = optparse.OptionParser()
-parser.add_option("-p", "--path",dest="path", help="path you save file in ")
-parser.add_option("-t", "--target",dest="target", help="put target ip")
+parser.add_option("-p", "--path",dest="path", help="were you want save ")
+parser.add_option("-t", "--target",dest="target", help="target ip")
 (options, arguments) = parser.parse_args()
 logo1 = R+'''
     ._.                  _.____.
