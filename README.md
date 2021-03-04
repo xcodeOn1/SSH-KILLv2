@@ -1,6 +1,10 @@
 # SSH-KILLv1
 Attack ssh in IOS phone 
 
+# How to use ?
+
+python3 SSH_KILL.py -t target ip -p were you want save
+
 # What you need to install
 * 1- apt-get install sftp
 * 2- apt-get install sshpass
