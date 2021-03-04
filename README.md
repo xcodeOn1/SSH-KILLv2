@@ -14,7 +14,7 @@ python3 SSH_KILL.py -t target ip -p were you want save
 * ✅Brute force ssh
 * ✅Choose wordlist
 * ✅without Library
-* ✅ Without private & public
+* ✅ Without private key & public key
 
 # Photo
 
