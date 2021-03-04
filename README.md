@@ -2,15 +2,15 @@
 Attack ssh in IOS phone 
 
 # What you need to install
-1- apt-get install sftp
-2- apt-get install sshpass
+* 1- apt-get install sftp
+* 2- apt-get install sshpass
 
 # What new in this tool ?
 
-✅Brute force ssh
-✅Choose wordlist
-✅without Library
-✅ Without private & public
+* ✅Brute force ssh
+* ✅Choose wordlist
+* ✅without Library
+* ✅ Without private & public
 
 # Photo
 
