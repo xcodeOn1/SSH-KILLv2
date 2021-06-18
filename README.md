@@ -20,4 +20,4 @@ python3 SSH_KILL.py -p were you want save
 
 # Photo
 
-![Script](https://up4net.com/uploads3/up4net-SSH-KILL.png)
+![Script](https://up4net.com/uploads4/up4net.com162404407526981.png)
