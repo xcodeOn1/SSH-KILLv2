@@ -3,18 +3,20 @@ Attack ssh in IOS phone
 
 # How to use ?
 
-python3 SSH_KILL.py -t target ip -p were you want save
+python3 SSH_KILL.py -p were you want save
 
-# What you need to install
-* 1- apt-get install sftp
-* 2- apt-get install sshpass
+# what you need to use this tool
+* 1- jailbroken iphone target
+* 2- you can only target inside you network
+* 3- ssh port open in target iphone   
 
 # What new in this tool ?
 
 * ✅Brute force ssh
 * ✅Choose wordlist
 * ✅without Library
-* ✅ Without private key & public key
+* ✅Without private key & public key
+* ✅Without put any ip & Full scan for network 
 
 # Photo
 
