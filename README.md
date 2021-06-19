@@ -3,7 +3,7 @@ Attack ssh in IOS phone
 
 # How to use ?
 
-python3 SSH_KILL.py -p were you want save
+python3 SSH_KILL.py -p were you want save it
 * video : https://www.youtube.com/watch?v=Idk7VrdcFek
 
 # what you need to use this tool
