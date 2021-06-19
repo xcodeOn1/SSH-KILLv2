@@ -3,7 +3,7 @@
 ![Script](https://up4net.com/uploads4/up4net.com16241029903881.png)
 
 Attack iPhone if ssh service open, many users use "Open SSH" in jailbroken devices to transfer files
-between laptop / PC & iPhone to make their life easier but the issue here "Open SSH " tweak use it use the  default password "alpine"
+between laptop / PC & iPhone to make their life easier but the issue here "Open SSH " tweak use the  default password "alpine"
 and many users don't change it if they change it here were SSH-KILLv2 be useful to crack ssh password and dump files & have access to victim IOS. 
 
 # How to use ?
