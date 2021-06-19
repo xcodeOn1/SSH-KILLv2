@@ -4,7 +4,7 @@ Attack ssh in IOS phone
 # How to use ?
 
 python3 SSH_KILL.py -p were you want save
-video : https://www.youtube.com/watch?v=r_i-8vwf5n4
+* video : https://www.youtube.com/watch?v=Idk7VrdcFek
 
 # what you need to use this tool
 * 1- jailbroken iphone target
