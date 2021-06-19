@@ -39,7 +39,6 @@ except:
     pass
 parser = optparse.OptionParser()
 parser.add_option("-p", "--path",dest="path", help="were you want save ")
-parser.add_option("-t", "--target",dest="target", help="target ip")
 (options, arguments) = parser.parse_args()
 logo1 = R+'''
     ._.                  _.____.
