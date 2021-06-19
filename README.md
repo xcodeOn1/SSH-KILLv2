@@ -9,7 +9,7 @@ and many users don't change it if they change it here were SSH-KILLv2 be useful 
 # How to use ?
 
 python3 SSH_KILL.py -p were you want save it
-* video : https://www.youtube.com/watch?v=Idk7VrdcFek
+* video for more details : 
 
 # What you need to use this tool
 * 1- jailbroken iphone target
