@@ -8,7 +8,7 @@ and many users don't change it if they change it here were SSH-KILLv2 be useful 
 
 # How to use ?
 
-sudo python3 SSH_KILL.py -p were you want save it
+sudo python3 SSH_KILLv2.py -p were you want save it
 * video for more details :  https://www.youtube.com/watch?v=nessVqLoo3o
 
 # What you need to use this tool
