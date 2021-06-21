@@ -20,7 +20,7 @@ sudo python3 SSH_KILLv2.py -p were you want save it
 
 * ✅Brute force ssh
 * ✅Choose wordlist
-* ✅without Library
+* ✅Without Library
 * ✅Without private key & public key
 * ✅Without put any ip & Full scan for network 
 
